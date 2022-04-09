@@ -11,13 +11,13 @@ class HttpHelper {
           });
     } else if (therapistid == null) {
       String datetimestring = dateTime.toString();
-      response = await http.get(Uri.parse("http://localhost:5110/Posts/GetPostsByDate/$datetimestring"));
+      response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$datetimestring"));
     } else if (dateTime == null) {
-      response = await http.get(Uri.parse("http://localhost:5110/Posts/GetPostsByDate/$therapistid"));
+      response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$therapistid"));
     } else {
-      var response1 = await http.get(Uri.parse("http://localhost:5110/Posts/GetPostsByDate/$therapistid"));
+      var response1 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$therapistid"));
       String datetimestring = dateTime.toString();
-      var response2 = await http.get(Uri.parse("http://localhost:5110/Posts/GetPostsByDate/$datetimestring"));
+      var response2 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$datetimestring"));
       if (response1.statusCode == 200 && response2.statusCode == 200) {
         List<Post> posts = List.empty();
         List<Post> posts1 = Post.listfromJson(response1.body);

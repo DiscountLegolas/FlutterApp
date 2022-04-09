@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       home: MyHomePage(),
     );
@@ -105,7 +105,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final posts = HttpHelper.getposts();
+    final posts = HttpHelper.getposts(therapistid: 1);
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
