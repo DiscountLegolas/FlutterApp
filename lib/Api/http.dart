@@ -6,14 +6,12 @@ class HttpHelper {
     final response;
     if (therapistid == null && dateTime == null) {
       print("object");
-      response = await http.get(Uri.parse('https://localhost:7135/Posts/GetAllPosts')).whenComplete(() => {
-            print("fafa")
-          });
+      response = await http.get(Uri.parse('https://localhost:7135/Posts/GetAllPosts'));
     } else if (therapistid == null) {
       String datetimestring = dateTime.toString();
       response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$datetimestring"));
     } else if (dateTime == null) {
-      response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$therapistid"));
+      response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/1"));
     } else {
       var response1 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$therapistid"));
       String datetimestring = dateTime.toString();
