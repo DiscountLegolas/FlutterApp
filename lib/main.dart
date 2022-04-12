@@ -72,7 +72,7 @@ class PostPage extends StatelessWidget {
                 Text(post.Title),
                 const SizedBox(height: 20),
                 ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: (MediaQuery.of(context).size.height / 10) * 8),
+                    constraints: BoxConstraints(minHeight: (MediaQuery.of(context).size.height / 10) * 5),
                     child: SingleChildScrollView(
                       child: Text(post.Content),
                     )),
