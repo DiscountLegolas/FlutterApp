@@ -11,7 +11,6 @@ class HttpHelper {
       String datetimestring = dateTime.toString();
       response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$datetimestring"));
     } else if (dateTime == null) {
-      print("therapistapi");
       response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByTherapist/$therapistid"));
     } else {
       var response1 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByTherapist/$therapistid"));
