@@ -105,7 +105,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final posts = HttpHelper.getposts(therapistid: 1);
+    final posts = HttpHelper.getposts();
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
