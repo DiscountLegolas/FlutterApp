@@ -49,10 +49,9 @@ class PostsGrid extends StatelessWidget {
     // TODO: implement build
     return Column(children: <Widget>[
       TextField(
-        keyboardType: TextInputType.number,
-        onSubmitted: (String number) {
-          int id = int.parse(number);
-          post.GetByTherapistId(id);
+        keyboardType: TextInputType.text,
+        onSubmitted: (String str) {
+          post.GetByNameSurname(str);
         },
       ),
       Container(

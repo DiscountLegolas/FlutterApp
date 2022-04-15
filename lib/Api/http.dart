@@ -2,18 +2,18 @@ import 'package:example/Api/Models/Post.dart';
 import 'package:http/http.dart' as http;
 
 class HttpHelper {
-  static Future<List<Post>> getposts({int? therapistid, DateTime? dateTime}) async {
+  static Future<List<Post>> getposts({String? str, DateTime? dateTime}) async {
     final response;
-    if (therapistid == null && dateTime == null) {
+    if (str == null && dateTime == null) {
       print("object");
       response = await http.get(Uri.parse('https://localhost:7135/Posts/GetAllPosts'));
-    } else if (therapistid == null) {
+    } else if (str == null) {
       String datetimestring = dateTime.toString();
       response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$datetimestring"));
     } else if (dateTime == null) {
-      response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByTherapist/$therapistid"));
+      response = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByTherapistNameSurname/$str"));
     } else {
-      var response1 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByTherapist/$therapistid"));
+      var response1 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByTherapistNameSurname/$str"));
       String datetimestring = dateTime.toString();
       var response2 = await http.get(Uri.parse("https://localhost:7135/Posts/GetPostsByDate/$datetimestring"));
       if (response1.statusCode == 200 && response2.statusCode == 200) {

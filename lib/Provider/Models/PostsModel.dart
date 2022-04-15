@@ -17,8 +17,8 @@ class PostsModel extends ChangeNotifier {
     this.setposts = HttpHelper.getposts(dateTime: dateTime);
   }
 
-  void GetByTherapistId(int therapistid) {
-    this.setposts = HttpHelper.getposts(therapistid: therapistid);
+  void GetByNameSurname(String str) {
+    this.setposts = HttpHelper.getposts(str: str);
   }
 
   void GetByDateTimeTherapistId(DateTime dateTime, int therapistid) {
