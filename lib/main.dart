@@ -1,8 +1,14 @@
+import 'dart:js';
+
+import 'package:example/Provider/Models/PostsModel.dart';
+import 'package:example/Provider/Pages/PostsPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:example/Api/http.dart';
 import 'package:http/http.dart' as http;
 import 'Api/Models/Post.dart';
+import 'package:flutter/foundation.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,31 +20,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.amber,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class PostsPage extends StatelessWidget {
-  const PostsPage({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => PostsModel(),
+          )
+        ],
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            // This is the theme of your application.
+            //
+            // Try running your application with "flutter run". You'll see the
+            // application has a blue toolbar. Then, without quitting the app, try
+            // changing the primarySwatch below to Colors.green and then invoke
+            // "hot reload" (press "r" in the console where you ran "flutter run",
+            // or simply save your changes to "hot reload" in a Flutter IDE).
+            // Notice that the counter didn't reset back to zero; the application
+            // is not restarted.
+            primarySwatch: Colors.amber,
+          ),
+          home: MyHomePage(),
+        ));
   }
 }
 
@@ -156,6 +159,11 @@ class MyHomePage extends StatelessWidget {
               title: Text("Therapists"),
             ),
             ListTile(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PostsPage(),
+                  )),
               leading: Icon(Icons.pageview),
               title: Text("Posts"),
             ),
