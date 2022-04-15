@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
 import 'package:example/Api/Models/Post.dart';
 import 'package:example/Api/http.dart';
-import 'package:example/MobxFiles/Posts.dart';
 import 'package:flutter/foundation.dart';
 
 class PostsModel extends ChangeNotifier {
