@@ -55,19 +55,21 @@ class PostsGrid extends StatelessWidget {
           post.GetByTherapistId(id);
         },
       ),
-      FutureBuilder(
-          future: post.posts,
-          builder: (BuildContext bcontext, AsyncSnapshot snapshot) {
-            if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
-            } else {
-              return ListView.builder(
-                  itemCount: snapshot.data.length,
-                  itemBuilder: (context, index) {
-                    return Post.PostCard(snapshot.data[index], context);
-                  });
-            }
-          })
+      Container(
+          height: MediaQuery.of(context).size.height / 2,
+          child: FutureBuilder(
+              future: post.posts,
+              builder: (BuildContext bcontext, AsyncSnapshot snapshot) {
+                if (!snapshot.hasData) {
+                  return const CircularProgressIndicator();
+                } else {
+                  return ListView.builder(
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (context, index) {
+                        return Post.PostCard(snapshot.data[index], context);
+                      });
+                }
+              }))
     ]);
   }
 }
