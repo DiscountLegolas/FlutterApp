@@ -55,6 +55,8 @@ class PostsGrid extends StatelessWidget {
             keyboardType: TextInputType.text,
             onSubmitted: (String str) {
               if (str.characters.length <= 1) {
+                print("dolu");
+
                 post.GetByNameSurname();
               } else
                 print("dolu");
