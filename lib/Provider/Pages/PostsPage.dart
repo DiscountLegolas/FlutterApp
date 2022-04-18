@@ -12,13 +12,7 @@ class PostsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Kekemelik Therapist App"),
-        ),
-        drawer: MyApp.BuildDrawer(context),
-        body: PostsGrid());
+    return Scaffold(appBar: MyApp.BuildAppBar(context), drawer: MyApp.BuildDrawer(context), body: PostsGrid());
   }
 }
 

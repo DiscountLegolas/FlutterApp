@@ -19,6 +19,19 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  static AppBar BuildAppBar(context) {
+    return AppBar(
+      centerTitle: true,
+      title: Text("Kekemelik Therapist App"),
+      actions: <Widget>[
+        IconButton(
+            onPressed: () {
+              print("Login Page");
+            },
+            icon: const Icon(Icons.person))
+      ],
+    );
+  }
 
   static Drawer BuildDrawer(context) {
     return Drawer(
@@ -118,10 +131,7 @@ class PostPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Kekemelik Therapist App"),
-        ),
+        appBar: MyApp.BuildAppBar(context),
         body: Card(
             child: Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.amber)),
@@ -177,10 +187,7 @@ class MyHomePage extends StatelessWidget {
     final posts = HttpHelper.getposts();
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Kekemelik Therapist App"),
-      ),
+      appBar: MyApp.BuildAppBar(context),
       body: Column(
         children: <Widget>[
           Container(

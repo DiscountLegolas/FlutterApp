@@ -9,7 +9,6 @@ class PostsModel extends ChangeNotifier {
   }
   Future<List<Post>> get posts => _posts;
   set setposts(Future<List<Post>> newposts) {
-    print("notified");
     _posts = newposts;
     notifyListeners();
   }
