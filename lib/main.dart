@@ -186,6 +186,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Loaded");
     final posts = HttpHelper.getposts();
     // TODO: implement build
     return Scaffold(
