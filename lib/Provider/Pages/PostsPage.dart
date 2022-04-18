@@ -37,7 +37,7 @@ class PostsGrid extends StatelessWidget {
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
-        margin: EdgeInsets.only(top: 20, bottom: 10),
+        margin: EdgeInsets.only(top: 10, bottom: 10),
         child: RaisedButton(
           onPressed: () => _selectDate(context, post),
           child: Text('Select date'),
@@ -45,6 +45,7 @@ class PostsGrid extends StatelessWidget {
       ),
       Container(
           height: 25,
+          margin: EdgeInsets.only(top: 20),
           decoration: BoxDecoration(
               border: Border(
             bottom: BorderSide(width: 1.0, color: Colors.red),
