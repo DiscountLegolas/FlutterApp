@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:example/Provider/Models/PostsModel.dart';
 import 'package:example/Provider/Pages/PostsPage.dart';
+import 'package:example/Provider/Pages/TherapistsPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:example/Api/http.dart';
@@ -39,6 +40,14 @@ class MyApp extends StatelessWidget {
             title: Text("Home Page"),
           ),
           ListTile(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TherapistsPage(),
+                  ));
+            },
             leading: Icon(Icons.person),
             title: Text("Therapists"),
           ),
