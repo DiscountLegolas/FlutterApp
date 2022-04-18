@@ -1,6 +1,7 @@
 import 'dart:js';
 
 import 'package:example/Provider/Models/PostsModel.dart';
+import 'package:example/Provider/Models/TherapistModel.dart';
 import 'package:example/Provider/Pages/PostsPage.dart';
 import 'package:example/Provider/Pages/TherapistsPage.dart';
 import 'package:flutter/cupertino.dart';
@@ -75,6 +76,9 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(
             create: (context) => PostsModel(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => TherapistsModel(),
           )
         ],
         child: MaterialApp(
