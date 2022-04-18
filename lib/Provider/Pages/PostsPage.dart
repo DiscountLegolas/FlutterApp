@@ -35,6 +35,7 @@ class PostsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var post = context.watch<PostsModel>();
+    post.GetByNameSurname("");
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
