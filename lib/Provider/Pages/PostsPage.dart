@@ -31,7 +31,7 @@ class PostsGrid extends StatelessWidget {
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
-          height: 200,
+          height: 50,
           child: CupertinoDatePicker(
             mode: CupertinoDatePickerMode.date,
             initialDateTime: DateTime.now(),
