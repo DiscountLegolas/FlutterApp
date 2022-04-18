@@ -17,6 +17,7 @@ class PostsPage extends StatelessWidget {
           centerTitle: true,
           title: Text("Kekemelik Therapist App"),
         ),
+        drawer: MyApp.BuildDrawer(context),
         body: PostsGrid());
   }
 }
