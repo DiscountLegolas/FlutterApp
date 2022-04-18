@@ -34,6 +34,11 @@ class Post {
         child: GestureDetector(
             onTap: () {
               Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PostPage(post: data),
+                  ));
             },
             child: Container(
               decoration: BoxDecoration(border: Border.all(color: Colors.amber)),
