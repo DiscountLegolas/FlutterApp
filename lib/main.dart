@@ -101,8 +101,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TherapistPage extends StatelessWidget{
-  PostPage({Key? key, required this.therapist}) : super(key: key);
+class TherapistPage extends StatelessWidget {
+  TherapistPage({Key? key, required this.therapist}) : super(key: key);
   final Therapist therapist;
   @override
   Widget build(BuildContext context) {
