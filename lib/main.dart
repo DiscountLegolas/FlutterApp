@@ -98,7 +98,6 @@ class PostPage extends StatelessWidget {
           centerTitle: true,
           title: Text("Kekemelik Therapist App"),
         ),
-        drawer: MyApp.BuildDrawer(context),
         body: Card(
             child: Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.amber)),
