@@ -18,8 +18,12 @@ class PostsModel extends ChangeNotifier {
     this.setposts = HttpHelper.getposts(dateTime: dateTime);
   }
 
-  void GetByNameSurname(String str) {
-    this.setposts = HttpHelper.getposts(str: str);
+  void GetByNameSurname({String? str}) {
+    if (str == null) {
+      this.setposts = HttpHelper.getposts();
+    } else {
+      this.setposts = HttpHelper.getposts(str: str);
+    }
   }
 
   void GetByDateTimeNameSurname(DateTime dateTime, String str) {

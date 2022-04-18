@@ -54,7 +54,7 @@ class PostsGrid extends StatelessWidget {
             decoration: new InputDecoration.collapsed(hintText: 'Enter Name-Surname of Therapist'),
             keyboardType: TextInputType.text,
             onSubmitted: (String str) {
-              post.GetByNameSurname(str);
+              post.GetByNameSurname(str: str);
             },
           )),
       Container(
