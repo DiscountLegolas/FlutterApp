@@ -28,6 +28,7 @@ class TherapistsGrid extends StatelessWidget {
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
+          margin: EdgeInsets.only(top: 20),
           height: 25,
           decoration: BoxDecoration(
               border: Border(
