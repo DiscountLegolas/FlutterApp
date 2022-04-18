@@ -31,6 +31,14 @@ class PostsGrid extends StatelessWidget {
     // TODO: implement build
     return Column(children: <Widget>[
       TextField(
+        decoration: new InputDecoration.collapsed(hintText: 'Enter Minimum Creation Date of Post'),
+        keyboardType: TextInputType.datetime,
+        onSubmitted: (String str) {
+          post.GetByNameSurname(str);
+        },
+      ),
+      TextField(
+        decoration: new InputDecoration.collapsed(hintText: 'Enter Name-Surname of Therapist'),
         keyboardType: TextInputType.text,
         onSubmitted: (String str) {
           post.GetByNameSurname(str);
