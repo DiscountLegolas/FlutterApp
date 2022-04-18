@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 
 class TherapistsModel extends ChangeNotifier {
   late Future<List<Therapist>> _therapists;
-  PostsModel() {
+  TherapistsModel() {
     this.settherapists = HttpHelper.gettherapists();
   }
 
