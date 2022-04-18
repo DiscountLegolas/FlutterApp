@@ -44,7 +44,6 @@ class MyApp extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              print("Özgür");
               Navigator.pop(context);
               Navigator.push(
                   context,
