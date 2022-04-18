@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Sign in',
+              'Therapist Sign in',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           );
                         },
-                        child: const Text('Create an account'),
+                        child: const Text('Create an therapist account'),
                       ),
                     ],
                   ),
