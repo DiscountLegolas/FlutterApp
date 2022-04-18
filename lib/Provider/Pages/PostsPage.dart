@@ -58,9 +58,10 @@ class PostsGrid extends StatelessWidget {
                 print("dolu2");
 
                 post.GetByNameSurname();
-              } else
+              } else {
                 print("dolu");
-              post.GetByNameSurname(str: str);
+                post.GetByNameSurname(str: str);
+              }
             },
           )),
       Container(
