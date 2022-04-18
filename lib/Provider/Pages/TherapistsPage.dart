@@ -51,7 +51,7 @@ class TherapistsGrid extends StatelessWidget {
                   return ListView.builder(
                       itemCount: snapshot.data.length,
                       itemBuilder: (context, index) {
-                        return Text("${snapshot.data[index].Name}");
+                        return Therapist.TherapistCard(snapshot.data[index], context);
                       });
                 }
               }))

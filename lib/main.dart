@@ -1,5 +1,6 @@
 import 'dart:js';
 
+import 'package:example/Api/Models/Therapist.dart';
 import 'package:example/Provider/Models/PostsModel.dart';
 import 'package:example/Provider/Models/TherapistModel.dart';
 import 'package:example/Provider/Pages/PostsPage.dart';
@@ -97,6 +98,16 @@ class MyApp extends StatelessWidget {
           ),
           home: MyHomePage(),
         ));
+  }
+}
+
+class TherapistPage extends StatelessWidget{
+  PostPage({Key? key, required this.therapist}) : super(key: key);
+  final Therapist therapist;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }
 
