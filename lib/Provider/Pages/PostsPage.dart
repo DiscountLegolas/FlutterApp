@@ -30,15 +30,6 @@ class PostsGrid extends StatelessWidget {
     var post = context.watch<PostsModel>();
     // TODO: implement build
     return Column(children: <Widget>[
-      Container(
-          height: 50,
-          child: CupertinoDatePicker(
-            mode: CupertinoDatePickerMode.date,
-            initialDateTime: DateTime.now(),
-            onDateTimeChanged: (DateTime newDateTime) {
-              post.GetByDateTime(newDateTime);
-            },
-          )),
       TextField(
         keyboardType: TextInputType.text,
         onSubmitted: (String str) {
