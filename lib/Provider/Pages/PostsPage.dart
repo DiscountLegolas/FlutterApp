@@ -42,20 +42,6 @@ class PostsGrid extends StatelessWidget {
         child: Text('Select date'),
       ),
       Container(
-          margin: EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
-              border: Border(
-            bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
-          )),
-          height: 50,
-          child: TextField(
-            decoration: new InputDecoration.collapsed(hintText: 'Enter Minimum Creation Date of Post'),
-            keyboardType: TextInputType.datetime,
-            onSubmitted: (String str) {
-              post.GetByNameSurname(str);
-            },
-          )),
-      Container(
           height: 50,
           decoration: BoxDecoration(
               border: Border(
