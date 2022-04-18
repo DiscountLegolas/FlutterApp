@@ -5,12 +5,10 @@ import 'package:example/Provider/Models/PostsModel.dart';
 import 'package:example/Provider/Models/TherapistModel.dart';
 import 'package:example/Provider/Pages/PostsPage.dart';
 import 'package:example/Provider/Pages/TherapistsPage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:example/login.dart';
 import 'package:flutter/material.dart';
 import 'package:example/Api/http.dart';
-import 'package:http/http.dart' as http;
 import 'Api/Models/Post.dart';
-import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,7 +24,11 @@ class MyApp extends StatelessWidget {
       actions: <Widget>[
         IconButton(
             onPressed: () {
-              print("Login Page");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(title: "Kekemelik"),
+                  ));
             },
             icon: const Icon(Icons.person))
       ],
