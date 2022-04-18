@@ -35,7 +35,6 @@ class PostsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var post = context.watch<PostsModel>();
-    post.setposts = HttpHelper.getposts();
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
