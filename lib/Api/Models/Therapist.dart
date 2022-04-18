@@ -36,7 +36,7 @@ class Therapist extends BaseUser {
                   ));
             },
             child: Container(
-              height: 75,
+              height: 100,
               decoration: BoxDecoration(border: Border.all(color: Colors.amber)),
               child: Padding(
                 padding: EdgeInsets.all(20.0),
