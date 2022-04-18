@@ -31,6 +31,11 @@ class PostsGrid extends StatelessWidget {
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
+          margin: EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(
+              border: Border(
+            bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
+          )),
           height: 50,
           child: TextField(
             decoration: new InputDecoration.collapsed(hintText: 'Enter Minimum Creation Date of Post'),
@@ -41,6 +46,10 @@ class PostsGrid extends StatelessWidget {
           )),
       Container(
           height: 50,
+          decoration: BoxDecoration(
+              border: Border(
+            bottom: BorderSide(width: 16.0, color: Colors.red),
+          )),
           child: TextField(
             decoration: new InputDecoration.collapsed(hintText: 'Enter Name-Surname of Therapist'),
             keyboardType: TextInputType.text,
