@@ -58,7 +58,7 @@ class PostsGrid extends StatelessWidget {
             },
           )),
       Container(
-          height: (MediaQuery.of(context).size.height / 4) * 3,
+          height: (MediaQuery.of(context).size.height / 8) * 5,
           child: FutureBuilder(
               future: post.posts,
               builder: (BuildContext bcontext, AsyncSnapshot snapshot) {
