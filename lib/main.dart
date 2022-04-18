@@ -26,11 +26,14 @@ class MyApp extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.amber),
           ),
           ListTile(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MyHomePage(),
-                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyHomePage(),
+                  ));
+            },
             leading: Icon(Icons.home),
             title: Text("Home Page"),
           ),
@@ -39,11 +42,15 @@ class MyApp extends StatelessWidget {
             title: Text("Therapists"),
           ),
           ListTile(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PostsPage(),
-                )),
+            onTap: () {
+              print("Özgür");
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PostsPage(),
+                  ));
+            },
             leading: Icon(Icons.pageview),
             title: Text("Posts"),
           ),

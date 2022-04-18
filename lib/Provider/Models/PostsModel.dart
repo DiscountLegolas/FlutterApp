@@ -5,10 +5,11 @@ import 'package:flutter/foundation.dart';
 class PostsModel extends ChangeNotifier {
   late Future<List<Post>> _posts;
   PostsModel() {
-    _posts = HttpHelper.getposts();
+    this.setposts = HttpHelper.getposts();
   }
   Future<List<Post>> get posts => _posts;
   set setposts(Future<List<Post>> newposts) {
+    print("notified");
     _posts = newposts;
     notifyListeners();
   }

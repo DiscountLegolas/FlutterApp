@@ -1,7 +1,22 @@
 import 'package:example/Api/Models/Post.dart';
+import 'package:example/Api/Models/Therapist.dart';
 import 'package:http/http.dart' as http;
 
 class HttpHelper {
+  static Future<List<Therapist>> gettherapists({String? str}) async {
+    final response;
+    if (str == null) {
+      response = await http.get(Uri.parse('https://localhost:7135/Therapist/GetTherapists'));
+    } else {
+      response = await http.get(Uri.parse('https://localhost:7135/Therapist/GetTherapists/$str'));
+    }
+    if (response.statusCode == 200) {
+      return Therapist.listfromJson(response.body);
+    } else {
+      throw Exception("Hata");
+    }
+  }
+
   static Future<List<Post>> getposts({String? str, DateTime? dateTime}) async {
     final response;
     if (str == null && dateTime == null) {
