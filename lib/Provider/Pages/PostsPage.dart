@@ -1,9 +1,11 @@
 import 'dart:js';
 
 import 'package:example/Api/Models/Post.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:example/Provider/Models/PostsModel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class PostsPage extends StatelessWidget {
   const PostsPage({Key? key}) : super(key: key);
@@ -48,6 +50,13 @@ class PostsGrid extends StatelessWidget {
     var post = context.watch<PostsModel>();
     // TODO: implement build
     return Column(children: <Widget>[
+      CupertinoDatePicker(
+        mode: CupertinoDatePickerMode.date,
+        initialDateTime: DateTime.now(),
+        onDateTimeChanged: (DateTime newDateTime) {
+          post.GetByDateTime(newDateTime);
+        },
+      ),
       TextField(
         keyboardType: TextInputType.text,
         onSubmitted: (String str) {
