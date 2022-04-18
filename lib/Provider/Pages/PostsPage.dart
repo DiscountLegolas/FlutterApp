@@ -25,16 +25,27 @@ class PostsPage extends StatelessWidget {
 
 class PostsGrid extends StatelessWidget {
   PostsGrid({Key? key}) : super(key: key);
+  Future<void> _selectDate(BuildContext context, PostsModel postsModel) async {
+    final DateTime? picked = await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
+    if (picked != null) {
+      postsModel.GetByDateTime(picked);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var post = context.watch<PostsModel>();
     // TODO: implement build
     return Column(children: <Widget>[
+      RaisedButton(
+        onPressed: () => _selectDate(context, post),
+        child: Text('Select date'),
+      ),
       Container(
           margin: EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
               border: Border(
-            bottom: BorderSide(width: 1.0, color: Colors.lightBlue.shade900),
+            bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
           )),
           height: 50,
           child: TextField(
@@ -58,7 +69,7 @@ class PostsGrid extends StatelessWidget {
             },
           )),
       Container(
-          height: (MediaQuery.of(context).size.height / 8) * 5,
+          height: (MediaQuery.of(context).size.height / 4) * 3,
           child: FutureBuilder(
               future: post.posts,
               builder: (BuildContext bcontext, AsyncSnapshot snapshot) {
