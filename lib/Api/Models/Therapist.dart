@@ -43,7 +43,6 @@ class Therapist extends BaseUser {
                 child: Column(
                   children: [
                     Text(data.Name + " " + data.Surname),
-                    Spacer(),
                     Row(
                       children: <Widget>[
                         Text("${data.il}"),
