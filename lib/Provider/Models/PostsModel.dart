@@ -20,11 +20,8 @@ class PostsModel extends ChangeNotifier {
 
   void GetByNameSurname({String? str}) {
     if (str == null) {
-      print("null");
       this.setposts = HttpHelper.getposts();
     } else {
-      print("not null");
-
       this.setposts = HttpHelper.getposts(str: str);
     }
   }
