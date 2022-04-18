@@ -13,6 +13,10 @@ class PostsModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void GetAllPosts() {
+    this.setposts = HttpHelper.getposts();
+  }
+
   void GetByDateTime(DateTime dateTime) {
     this.setposts = HttpHelper.getposts(dateTime: dateTime);
   }
