@@ -45,7 +45,7 @@ class PostsGrid extends StatelessWidget {
         ),
       ),
       Container(
-          height: 50,
+          height: 25,
           decoration: BoxDecoration(
               border: Border(
             bottom: BorderSide(width: 1.0, color: Colors.red),
