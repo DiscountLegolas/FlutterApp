@@ -54,7 +54,7 @@ class PostsGrid extends StatelessWidget {
             decoration: new InputDecoration.collapsed(hintText: 'Enter Name-Surname of Therapist'),
             keyboardType: TextInputType.text,
             onSubmitted: (String str) {
-              if (str.characters.length > 0) {
+              if (str.characters.length <= 0) {
                 post.GetByNameSurname();
               } else
                 print("dolu");
