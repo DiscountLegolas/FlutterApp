@@ -50,13 +50,15 @@ class PostsGrid extends StatelessWidget {
     var post = context.watch<PostsModel>();
     // TODO: implement build
     return Column(children: <Widget>[
-      CupertinoDatePicker(
-        mode: CupertinoDatePickerMode.date,
-        initialDateTime: DateTime.now(),
-        onDateTimeChanged: (DateTime newDateTime) {
-          post.GetByDateTime(newDateTime);
-        },
-      ),
+      Container(
+          height: 200,
+          child: CupertinoDatePicker(
+            mode: CupertinoDatePickerMode.date,
+            initialDateTime: DateTime.now(),
+            onDateTimeChanged: (DateTime newDateTime) {
+              post.GetByDateTime(newDateTime);
+            },
+          )),
       TextField(
         keyboardType: TextInputType.text,
         onSubmitted: (String str) {
@@ -64,7 +66,7 @@ class PostsGrid extends StatelessWidget {
         },
       ),
       Container(
-          height: MediaQuery.of(context).size.height / 2,
+          height: (MediaQuery.of(context).size.height / 4) * 3,
           child: FutureBuilder(
               future: post.posts,
               builder: (BuildContext bcontext, AsyncSnapshot snapshot) {

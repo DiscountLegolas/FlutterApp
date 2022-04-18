@@ -5,7 +5,6 @@ class HttpHelper {
   static Future<List<Post>> getposts({String? str, DateTime? dateTime}) async {
     final response;
     if (str == null && dateTime == null) {
-      print("object");
       response = await http.get(Uri.parse('https://localhost:7135/Posts/GetAllPosts'));
     } else if (str == null) {
       String datetimestring = dateTime.toString();
@@ -31,7 +30,6 @@ class HttpHelper {
       }
     }
     if (response.statusCode == 200) {
-      print(response.body);
       return Post.listfromJson(response.body);
     } else {
       throw Exception("Hata");
