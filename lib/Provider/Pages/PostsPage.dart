@@ -1,11 +1,12 @@
 import 'dart:js';
 
 import 'package:example/Api/Models/Post.dart';
+import 'package:example/Api/http.dart';
+
 import 'package:example/main.dart';
 import 'package:provider/provider.dart';
 import 'package:example/Provider/Models/PostsModel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 class PostsPage extends StatelessWidget {
   const PostsPage({Key? key}) : super(key: key);
@@ -34,6 +35,7 @@ class PostsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var post = context.watch<PostsModel>();
+    post.setposts = HttpHelper.getposts();
     // TODO: implement build
     return Column(children: <Widget>[
       Container(
