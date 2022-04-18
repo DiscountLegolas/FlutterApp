@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.pop(context);
+
               Navigator.push(
                   context,
                   MaterialPageRoute(

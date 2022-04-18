@@ -33,8 +33,6 @@ class Post {
     return Card(
         child: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
-
               Navigator.push(
                   context,
                   MaterialPageRoute(
