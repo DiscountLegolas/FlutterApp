@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:example/Api/Models/Post.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:example/main.dart';
 import 'package:provider/provider.dart';
 import 'package:example/Provider/Models/PostsModel.dart';
 import 'package:flutter/material.dart';
@@ -17,28 +18,7 @@ class PostsPage extends StatelessWidget {
           centerTitle: true,
           title: Text("Kekemelik Therapist App"),
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              DrawerHeader(
-                child: Text(""),
-                decoration: BoxDecoration(color: Colors.amber),
-              ),
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text("Home Page"),
-              ),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text("Therapists"),
-              ),
-              ListTile(
-                leading: Icon(Icons.pageview),
-                title: Text("Posts"),
-              ),
-            ],
-          ),
-        ),
+        drawer: MyApp.BuildDrawer(context),
         body: PostsGrid());
   }
 }

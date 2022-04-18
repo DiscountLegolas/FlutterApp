@@ -17,6 +17,41 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  static Drawer BuildDrawer(context) {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          DrawerHeader(
+            child: Text(""),
+            decoration: BoxDecoration(color: Colors.amber),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyHomePage(),
+                )),
+            leading: Icon(Icons.home),
+            title: Text("Home Page"),
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("Therapists"),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PostsPage(),
+                )),
+            leading: Icon(Icons.pageview),
+            title: Text("Posts"),
+          ),
+        ],
+      ),
+    );
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -56,6 +91,7 @@ class PostPage extends StatelessWidget {
           centerTitle: true,
           title: Text("Kekemelik Therapist App"),
         ),
+        drawer: MyApp.BuildDrawer(context),
         body: Card(
             child: Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.amber)),
@@ -143,33 +179,7 @@ class MyHomePage extends StatelessWidget {
           )
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: Text(""),
-              decoration: BoxDecoration(color: Colors.amber),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("Home Page"),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Therapists"),
-            ),
-            ListTile(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PostsPage(),
-                  )),
-              leading: Icon(Icons.pageview),
-              title: Text("Posts"),
-            ),
-          ],
-        ),
-      ),
+      drawer: MyApp.BuildDrawer(context),
     );
   }
 }
