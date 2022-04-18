@@ -34,7 +34,7 @@ class PostsGrid extends StatelessWidget {
           margin: EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
               border: Border(
-            bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
+            bottom: BorderSide(width: 1.0, color: Colors.lightBlue.shade900),
           )),
           height: 50,
           child: TextField(
@@ -48,7 +48,7 @@ class PostsGrid extends StatelessWidget {
           height: 50,
           decoration: BoxDecoration(
               border: Border(
-            bottom: BorderSide(width: 16.0, color: Colors.red),
+            bottom: BorderSide(width: 1.0, color: Colors.red),
           )),
           child: TextField(
             decoration: new InputDecoration.collapsed(hintText: 'Enter Name-Surname of Therapist'),
